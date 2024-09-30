@@ -1,0 +1,848 @@
+/* CSS Reset */
+
+/* Step-1- set Rest and cross browser css and all img responsiveness */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Step-2 - setting global styles  */
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey text */
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555; /* Slightly lighter than default text */
+}
+
+a {
+    color: #007acc; /* Blue for links */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Step-3- styling the layout  using flexbox*/
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+header .logo {
+   
+
+background-color: rgb(212, 219, 228);
+}
+
+
+header .logo h1 {
+    font-size: 24px;
+    color: #3a0da3;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    font-size: 18px;
+}
+
+nav ul li a {
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #007acc;
+    color: #fff;
+}
+
+/* Hero Section Styling */
+.hero {
+    background-image: url('/assets/thomas-heintz-0tgMnMIYQ9Y-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px; /* Add padding to prevent content from touching edges */
+}
+
+/* Media Query for Hero image */
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .hero {
+        background-size: cover;
+        background-position: top center; /* Adjust the position for mobile */
+        height: 60vh; /* Shorter height for mobile */
+    }
+
+    .hero-content h2 {
+        font-size: 24px; /* Smaller font size for titles */
+    }
+
+    .hero-content p {
+        font-size: 16px; /* Adjust paragraph size */
+    }
+
+    .cta-btn {
+        padding: 10px 20px; /* Make button smaller */
+        font-size: 14px;
+    }
+}
+
+/* Even smaller devices (max-width: 480px, common for phones) */
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh; /* Further reduce height for small phones */
+    }
+
+    .hero-content h2 {
+        font-size: 20px; /* Reduce title size */
+    }
+
+    .hero-content p {
+        font-size: 14px; /* Further adjust paragraph size */
+    }
+
+    .cta-btn {
+        padding: 8px 16px; /* Adjust button padding */
+        font-size: 12px;
+    }
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    background-color: #007acc;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #005f99;
+}
+
+/* Step- 4- add media query for tablet and mobile divices */
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .cta-btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Step-5- styling Featured Blog Post section */
+/* Featured Posts Section */
+.featured-posts {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 40px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.post {
+    background-color: whitesmoke;
+    border: 1px solid #dce7aa;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.post h3 {
+    font-size: 24px;
+    color: #007acc;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: #007acc;
+    font-weight: bold;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #007acc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #007acc;
+    color: #fff;
+}
+
+/* Step- 5- making featured post section responsive */
+/* Media Queries for Featured Posts */
+@media (max-width: 1024px) {
+    .posts-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+/* Step-6- styling Latest post section */
+/* Latest Posts Section */
+
+/* General Styles */
+.latest-blogs {
+    padding: 40px 20px;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+}
+.blog-container {
+    max-width: 1200px; /* Maximum width for the blog container */
+    margin: 0 auto; /* Center the container */
+}
+.posts-list {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(1, 1fr); /* Default to 1 column */
+    gap: 20px; /* Space between posts */
+}
+
+
+.blog-post {
+    background-color: #fff; /* White background for posts */
+    border: 1px solid #ddd; /* Light border around posts */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Clip content that overflows */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s; /* Animation on hover */
+}
+
+.blog-post:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+.blog-post img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.blog-post p {
+    font-size: 14px; /* Smaller text for category */
+    color: #666; /* Lighter color for category text */
+}
+
+.next-page-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    margin-top: 20px; /* Optional: Add some space above the button */
+}
+
+.next-page-btn {
+    padding: 10px 20px;
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.next-page-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Media Quesy for latest Blog-post-new changes with next page button */
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .blog-post {
+        flex: 0 0 calc(100% - 10px); /* Full width on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-post h3 {
+        font-size: 16px; /* Slightly smaller heading */
+    }
+
+    .blog-post p {
+        font-size: 12px; /* Smaller category text */
+    }
+
+    .next-page-btn {
+        width: 100%; /* Full width button on small screens */
+    }
+}
+/* //end-----// */
+
+.blog-post h3 {
+    font-size: 18px; /* Heading font size */
+    margin: 10px 0; /* Margin around the heading */
+}
+
+.blog-post img {
+    width: 100%; /* Makes images responsive */
+    height: auto; /* Maintains aspect ratio */
+    border-bottom: 1px solid #ddd; /* Border below the image */
+}
+
+.latest-posts {
+    padding: 60px 0;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.latest-posts .post {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.latest-posts .post img {
+    width: 200px;
+    height: auto;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.latest-posts .post h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.latest-posts .post p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Step-7 - add media queries for  Latest Post */
+
+/* Media Queries for Latest Blog Posts */
+@media (max-width: 1024px) {
+    .latest-posts .post {
+        flex-direction: column; /* Stack image and content vertically */
+        align-items: center;
+    }
+
+    .latest-posts .post img {
+        width: 100%; /* Make the image take full width */
+        height: auto;
+    }
+
+    .latest-posts .post-content {
+        text-align: center; /* Center the text for a balanced layout */
+    }
+}
+
+@media (max-width: 768px) {
+    .latest-posts .post {
+        flex-direction: column;
+        gap: 20px; /* Maintain some space between the image and text */
+    }
+
+    .latest-posts .post img {
+        width: 100%; /* Image will take up full width on mobile */
+    }
+
+    .latest-posts .post-content {
+        padding: 0 15px; /* Add padding to make the text more readable on small screens */
+    }
+}
+
+/* Step-8- Styling the footer */
+
+/* Footer Styling */
+#main-footer {
+    width: 100%;
+    background-color: #333; /* Dark footer background */
+    color: #fff;
+    padding: 20px 0; /* Adjust vertical padding */
+    margin: 0; /* Ensure no margin around the footer */
+}
+
+#main-footer .container {
+    width: 100%; /* Make sure the container spans full width */
+    max-width: none; /* Remove any width limitation */
+    padding: 0 20px; /* Add some horizontal padding to the content for spacing */
+}
+
+
+#main-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+#main-footer .footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#main-footer .footer-nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#main-footer .footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#main-footer .footer-nav ul li a:hover {
+    color: #ffcc00; /* Highlight on hover */
+}
+
+#main-footer .social-media a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#main-footer .social-media a img {
+    width: 24px;
+    height: 24px;
+}
+
+#main-footer .footer-bottom {
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Step-9- making footer section responsive */
+/* Responsive Footer */
+@media (max-width: 768px) {
+    #main-footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #main-footer .footer-nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #main-footer .social-media a {
+        margin: 10px;
+    }
+}
+
+/* step-10- addimg styling for contact and nesletter */
+/* Newsletter and Contact Info Styling */
+#main-footer .newsletter-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px 0;
+    border-top: 1px solid #444; /* Separator line */
+}
+
+#main-footer .newsletter,
+#main-footer .contact-info {
+    flex: 1;
+    margin: 0 20px;
+    text-align: center;
+}
+
+#main-footer .newsletter h3,
+#main-footer .contact-info h3 {
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+#main-footer .newsletter p,
+#main-footer .contact-info p {
+    color: #bbb;
+}
+
+#main-footer .newsletter form {
+    margin-top: 15px;
+}
+
+#main-footer .newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 70%;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#main-footer .newsletter button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#main-footer .newsletter button:hover {
+    background-color: #fff;
+}
+
+#main-footer .contact-info a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+#main-footer .contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Step-11-Styling most popular one */
+
+/* Basic styles for the carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow for smooth sliding */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth scrolling */
+    width: 300%; /* Set width to accommodate all slides */
+}
+
+.carousel-item {
+    min-width: 33.33%; /* Each item takes up 1/3 of the carousel width */
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Dots navigation */
+.carousel-dots {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Arrow controls (optional, for next/prev navigation) */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}
+
+/* Step-12-make carasoul responsive */
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 100%; /* Each item takes up the entire width on small screens */
+    }
+
+    .carousel-container {
+        width: 100%; /* Adjust the width for mobile */
+    }
+    
+    /* Adjust other styles, such as fonts, image sizes, etc. */
+    .carousel-item h3 {
+        font-size: 18px;
+    }
+
+    .carousel-item p {
+        font-size: 14px;
+    }
+}
+
+.most-popular-section {
+    padding: 20px;
+}
+
+.featured-article {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.featured-label {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.featured-image {
+    width: 50%;
+}
+
+.featured-content {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.featured-content .author {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.other-articles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+}
+
+.article-populer {
+    width: 20%;
+    text-align: left;
+}
+
+.article-populer h3 {
+    justify-content: left;
+    
+}
+
+.article-label {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.article h3 {
+    font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .featured-article {
+        flex-direction: column;
+    }
+
+    .featured-image {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .featured-content {
+        width: 100%;
+    }
+
+    .other-articles {
+        flex-direction: column;
+    }
+
+    .article {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.section-line {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 20px 0; /* Spacing around the line */
+}
+
+/* styling most populaer content and image to the left */
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Enables wrapping on smaller screens */
+}
+
+
+
+
+
+
